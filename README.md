@@ -1,70 +1,51 @@
-# Getting Started with Create React App
+**`注意：因为jest 是在node环境下运行的，node暂时没有实现ES6 module,Jest不支持ES6语法，所以不能使用import导入文件，需要引入babel。另外Jest识别三种测试文件，以.test.js结尾的文件，以.spec.js结尾的文件，和放到__tests__ 文件夹中的文件。`**
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### **安装**
 
-## Available Scripts
+```javascript
+npx create-react-app my-app --typescript
 
-In the project directory, you can run:
+npm install --save typescript @types/node @types/react @types/react-dom @types/jest
+```
+### **添加jest**
 
-### `npm start`
+```javascript
+npm install --save-dev jest
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### **修改配置**
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+package.json下面script修改成：
+```javascript
+"test":"jest",
+"coverage":"jest --coverage"
+```
 
-### `npm test`
+### **文件定义**
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+自己在src下面新建放页面和放test的文件夹
 
-### `npm run build`
+### **添加babel**
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```javascript
+ yarn add @babel/core@7.4.5 @babel/preset-env@7.4.5 --dev
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### **暴露webpack的配置**
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```javascript
+npm run eject
+```
 
-### `npm run eject`
+### **查看测试是否通过**
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```javascript
+npm run test
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### **查看项目的测试覆盖率**
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```javascript
+npm run coverage
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
