@@ -1,5 +1,5 @@
 import React, { Suspense } from 'react'
-import { HashRouter, Route, Routes, Navigate } from 'react-router-dom'
+import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom'
 import { Spin } from 'antd'
 
 const Home = React.lazy(() => import('./page/home'))
@@ -9,7 +9,7 @@ const I18next = React.lazy(() => import('./page/i18next'))
 
 export default function Router() {
     return (
-        <HashRouter>
+        <BrowserRouter>
             <Routes>
                 <Route
                     path="/"
@@ -31,6 +31,6 @@ export default function Router() {
                 }>
                 </Route>
             </Routes>
-        </HashRouter>
+        </BrowserRouter>
     )
 }

@@ -6,6 +6,11 @@ function Home() {
 	// const { t } = useTranslation();
 	const redirect = useNavigate()
 
+	const homeList = [
+		{ title: '测试模拟useLocation', path: '/location', content: '跳转路由去测试模拟useLocation'},
+		{ title: '测试模拟i18next', path: '/i18next', content: '跳转路由去测试模拟i18next'}
+	]
+
 	const toLocation = (path, params) => {
 		redirect(path, {
 			state: params
@@ -17,22 +22,17 @@ function Home() {
 			<div className='homeTitle'>
 				首页
 			</div>
-			<div
-				data-testid='homeList'
-				className='homeList'
-				onClick={() => toLocation('/location',
-					{ title: '测试模拟useLocation' })}
-			>
-				跳转路由去测试模拟useLocation
-			</div>
-			<div
-				data-testid='homeList'
-				className='homeList'
-				onClick={() => toLocation('/i18next',
-					{ title: '测试模拟i18next' })}
-			>
-				跳转路由去测试模拟i18next
-			</div>
+			{homeList.map(item => {
+				return (<div
+					key={item.path}
+					data-testid='homeList'
+					className='homeList'
+					onClick={() => toLocation(item.path,
+						{ title: item.title })}
+				>
+					{item.content}
+				</div>)
+			})}
 		</div>
 	);
 }
