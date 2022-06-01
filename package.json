@@ -35,6 +35,7 @@
     "i18next": "^21.8.5",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^27.4.3",
+    "jest-environment-jsdom": "^28.1.0",
     "jest-resolve": "^27.4.2",
     "jest-watch-typeahead": "^1.0.0",
     "mini-css-extract-plugin": "^2.4.5",
@@ -127,7 +128,7 @@
     "modulePaths": [],
     "moduleNameMapper": {
       "^react-native$": "react-native-web",
-      "^.+\\.module\\.(css|sass|scss)$": "identity-obj-proxy"
+      "\\.(css|less)$": "identity-obj-proxy"
     },
     "moduleFileExtensions": [
       "web.js",

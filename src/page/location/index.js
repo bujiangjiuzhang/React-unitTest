@@ -1,4 +1,5 @@
 import { useLocation } from 'react-router'
+import './index.css'
 
 // 此文件用于测试路由跳转参数接收的模拟
 
@@ -9,7 +10,7 @@ function Location() {
 
 	return (
 		<div className="location">
-			<p>{title}</p>
+			{title}
 		</div>
 	);
 }
