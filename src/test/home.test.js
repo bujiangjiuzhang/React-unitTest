@@ -4,11 +4,11 @@ import { BrowserRouter } from "react-router-dom";
 import userEvent from '@testing-library/user-event';
 
 // home文件主要测试内容：
-// 1.测试模拟navigate
+// 1.测试模拟useNavigate
 // 2.测试内容的显示
 // 3.测试点击事件
 
-// 测试模拟navigate
+// 测试模拟useNavigate
 jest.mock('react-router-dom', () => ({
   ...(jest.requireActual('react-router-dom')),
   useNavigate: () => jest.fn()

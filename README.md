@@ -3,38 +3,13 @@
 ### **安装**
 
 ```javascript
-npx create-react-app my-app --typescript
-
-npm install --save typescript @types/node @types/react @types/react-dom @types/jest
-```
-### **添加jest**
-
-```javascript
-npm install --save-dev jest
+git clone https://github.com/bujiangjiuzhang/React-unitTest.git
 ```
 
-### **修改配置**
-
-package.json下面script修改成：
-```javascript
-"test":"jest",
-"coverage":"jest --coverage"
-```
-
-### **文件定义**
-
-自己在src下面新建放页面和放test的文件夹
-
-### **添加babel**
+### **运行**
 
 ```javascript
- yarn add @babel/core@7.4.5 @babel/preset-env@7.4.5 --dev
-```
-
-### **暴露webpack的配置**
-
-```javascript
-npm run eject
+npm run start
 ```
 
 ### **查看测试是否通过**
@@ -48,4 +23,12 @@ npm run test
 ```javascript
 npm run coverage
 ```
+
+<!-- 文件说明： -->
+1.home.test.js主要用于测试useNavigate
+
+2.location.test.js主要用于测试useLocation
+
+3.i18next.test.js主要用于测试i18next国际化
+
 
