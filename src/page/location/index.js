@@ -7,11 +7,11 @@ function Location() {
 	const location = useLocation()
 	const { title } = location.state
 
-  return (
-    <div className="location">
-        <p>{title}</p>
-    </div>
-  );
+	return (
+		<div className="location">
+			<p>{title}</p>
+		</div>
+	);
 }
 
 export default Location;

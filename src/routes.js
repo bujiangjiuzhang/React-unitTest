@@ -8,29 +8,29 @@ const I18next = React.lazy(() => import('./page/i18next'))
 
 
 export default function Router() {
-  return (
-    <HashRouter>
-      <Routes>
-      <Route
-          path="/"
-          element={<Navigate replace to='/home' />}
-        ></Route>
+    return (
+        <HashRouter>
+            <Routes>
+                <Route
+                    path="/"
+                    element={<Navigate replace to='/home' />}
+                ></Route>
 
-      <Route path='/home' element={<Home />}></Route>
-      
-      <Route path='/location' element={
-            <Suspense fallback={<Spin />}>
-              <Location />
-            </Suspense>
-        }>
-      </Route>
-      <Route path='/i18next' element={
-            <Suspense fallback={<Spin />}>
-              <I18next />
-            </Suspense>
-        }>
-      </Route>
-      </Routes>
-    </HashRouter>
-  )
+                <Route path='/home' element={<Home />}></Route>
+
+                <Route path='/location' element={
+                    <Suspense fallback={<Spin />}>
+                        <Location />
+                    </Suspense>
+                }>
+                </Route>
+                <Route path='/i18next' element={
+                    <Suspense fallback={<Spin />}>
+                        <I18next />
+                    </Suspense>
+                }>
+                </Route>
+            </Routes>
+        </HashRouter>
+    )
 }
