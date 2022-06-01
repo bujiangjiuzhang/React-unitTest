@@ -1,0 +1,18 @@
+.home {
+    text-align: center;
+    margin-top: 20px;
+}
+.homeTitle {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.homeList {
+    margin-top: 10px;
+    height: 50px;
+    line-height: 50px;
+    background-color: rgb(167, 132, 132);
+    color: white;
+    justify-content: center;
+    cursor: pointer;
+}

@@ -1,0 +1,11 @@
+{
+    "home":{
+        "title":"首頁"
+    },
+    "location":{
+        "title":"測試路由跳轉"
+    },
+    "i18next":{
+        "title":"測試國際化"
+    }
+}
