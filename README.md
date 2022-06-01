@@ -25,6 +25,8 @@ npm run coverage
 ```
 
 <!-- 文件说明： -->
+主要页面位于src/page下，对应的测试文件位于src/test下
+
 1.home.test.js主要用于测试useNavigate
 
 2.location.test.js主要用于测试useLocation
