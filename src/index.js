@@ -7,7 +7,8 @@ import { I18nextProvider } from 'react-i18next';
 import i18n from './i18n';
 import {Provider} from "react-redux"
 import store from './store'
-console.log('store', store)
+// import 'antd/dist/antd.css'
+import 'antd/dist/antd.min.css'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

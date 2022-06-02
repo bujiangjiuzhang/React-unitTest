@@ -27,7 +27,7 @@ describe('Home', () => {
     expect(homeTitle).toBeInTheDocument()
 
     const homeList = await screen.findAllByTestId('homeList')
-    expect(homeList).toHaveLength(2)
+    expect(homeList).toHaveLength(5)
 
     // 测试点击事件
     userEvent.click(homeList[0])

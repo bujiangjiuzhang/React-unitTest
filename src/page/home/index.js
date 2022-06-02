@@ -10,7 +10,8 @@ function Home() {
 		{ title: '测试模拟useLocation', path: '/location', content: '跳转路由去测试模拟useLocation'},
 		{ title: '测试模拟i18next', path: '/i18next', content: '跳转路由去测试模拟i18next'},
 		{ title: '测试模拟sessionStorage', path: '/sessionStorage', content: '跳转路由去测试模拟sessionStorage'},
-		{ title: '测试模拟useSelector', path: '/useSelector', content: '跳转路由去测试模拟useSelector'}
+		{ title: '测试模拟useSelector', path: '/useSelector', content: '跳转路由去测试模拟useSelector'},
+		{ title: '测试模拟请求接口返回数据', path: '/interfaceDemo', content: '跳转路由去测试接口'}
 	]
 
 	sessionStorage.setItem('newStroge', JSON.stringify({ title: '测试sessionStorage存储过程' }))

@@ -1,0 +1,20 @@
+
+.interfaceDemo {
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.interfaceTitle {
+    color: antiquewhite;
+}
+
+.interfacenName {
+    margin-top: 20px;
+    color: beige;
+}
+
+.interfacenContent {
+    margin-top: 20px;
+}

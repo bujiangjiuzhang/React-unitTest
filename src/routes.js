@@ -6,7 +6,8 @@ const Home = React.lazy(() => import('./page/home'))
 const Location = React.lazy(() => import('./page/location'))
 const I18next = React.lazy(() => import('./page/i18next'))
 const SessionStorage = React.lazy(() => import('./page/sessionStorage'))
-const UseSelectorDemo = React.lazy(() => import('./page/UseSelectorDemo'))
+const UseSelectorDemo = React.lazy(() => import('./page/useSelectorDemo'))
+const InterfaceDemo = React.lazy(() => import('./page/interfaceDemo'))
 
 
 export default function Router() {
@@ -41,6 +42,12 @@ export default function Router() {
                 <Route path='/useSelector' element={
                     <Suspense fallback={<Spin />}>
                         <UseSelectorDemo />
+                    </Suspense>
+                }>
+                </Route>
+                <Route path='/interfaceDemo' element={
+                    <Suspense fallback={<Spin />}>
+                        <InterfaceDemo />
                     </Suspense>
                 }>
                 </Route>
