@@ -1,5 +1,5 @@
 import { useEffect, useState  } from 'react';
-import { Table } from 'antd';
+import { Button, Table } from 'antd';
 import axios from 'axios';
 import './index.css'
 
@@ -22,6 +22,9 @@ import './index.css'
             setList(response.data)
             setFlag(true)
         }
+    }
+    const getExcel = async()=> {
+        window.location.href = 'http://localhost:5000/getExcel'
     }
       
     const columns = [
@@ -53,6 +56,9 @@ import './index.css'
            </div>
            <div className='interfacenName'>
                 {list.name}
+           </div>
+           <div>
+               <Button type='primary' onClick={getExcel}>导出</Button>
            </div>
            {list.data &&
                 <div className='interfacenContent'>
