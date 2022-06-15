@@ -33,7 +33,10 @@ function Location() {
 	 // 导入xml
 	useEffect(() => {
 		(async () => {
+			// 读取默认xml
 		  await createBpmnDiagram(xmlStr);
+		// 创建空白流程图
+		// bpmnModeler?.createDiagram();
 		//   监听面板变化，有变化立即更新到xml中
 		  initPropertiesPanel();
 		})();
@@ -132,6 +135,9 @@ function Location() {
 		);
 	}
 
+	console.log('bpmnModeler.getModules()',bpmnModeler)
+	const ElementRegistry = bpmnModeler?.get("elementRegistry")
+	console.log(ElementRegistry?.get('process'))
 	return (
 		<div className="location">
 			<p>{title}</p>
