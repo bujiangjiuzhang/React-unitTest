@@ -10,5 +10,8 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.18.1"
+  },
+  "devDependencies": {
+    "node-xlsx": "^0.21.0"
   }
 }
