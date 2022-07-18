@@ -3,24 +3,24 @@ import { Button, Table } from 'antd';
 import axios from 'axios';
 import './index.css'
 
-// 此文件用于测试i18next的模拟
+// 此文件用于测试接口模拟
  function InterfaceDemo() {
     // 获取接口数据
     let [list, setList] = useState({})
-    let [flag, setFlag] = useState(false)
 
 
     useEffect(() => {
-        if(!flag) {
-            getList()
-        }
-    })
+        getList()
+    },[])
     
     const getList = async()=> {
-        const response = await axios.get('http://localhost:5000/getList')
-        if(response.status === 200) {
-            setList(response.data)
-            setFlag(true)
+        try {
+            const response = await axios.get('http://localhost:5000/getList')
+            if(response.status === 200) {
+                setList(response.data)
+            }
+        } catch(err) {
+            console.log(err);
         }
     }
     const getExcel = async()=> {
@@ -58,7 +58,7 @@ import './index.css'
                 {list.name}
            </div>
            <div>
-               <Button type='primary' onClick={getExcel}>导出</Button>
+               <Button data-testid="exportBtn" type='primary' onClick={getExcel}>导出</Button>
            </div>
            {list.data &&
                 <div className='interfacenContent'>
