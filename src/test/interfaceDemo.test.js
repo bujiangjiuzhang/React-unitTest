@@ -40,25 +40,11 @@ describe('InterfaceDemo', () => {
         expect(showTable).toBeInTheDocument()
         const zhangsan = await within(showTable).findByText('zhangsan')
         expect(zhangsan).toBeInTheDocument()
-        // screen.debug()
-    })
-
-    test('测试导出功能', async () => {
-        // eslint-disable-next-line testing-library/no-unnecessary-act
-        await act(() => {
-            render(
-                <InterfaceDemo />
-            )
-        })
-        // 通过id测试内容显示
-        const interfaceDemo = await screen.findByTestId('interfaceDemo')
-        expect(interfaceDemo).toBeInTheDocument()
         // 获取导出按钮
         const exportBtn = await within(interfaceDemo).findByTestId('exportBtn')
         expect(exportBtn).toBeInTheDocument()
         userEvent.click(exportBtn)
         // screen.debug()
-
-    });
+    })
 
 })
