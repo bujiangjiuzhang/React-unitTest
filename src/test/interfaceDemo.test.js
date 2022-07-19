@@ -1,7 +1,7 @@
 import InterfaceDemo from '../page/interfaceDemo'
 import { render, screen, within, act } from '@testing-library/react'
-// import { act } from '@testing-library/react-hooks'
-import { userEvent } from '@testing-library/user-event'
+// import { act } from "react-dom/test-utils";
+import userEvent from '@testing-library/user-event'
 import { BrowserRouter } from "react-router-dom";
 import Axios from 'axios'
 var MockAdapter = require("axios-mock-adapter");
@@ -25,19 +25,20 @@ describe('InterfaceDemo', () => {
         mock.resetHistory();
     });
     test('测试InterfaceDemo', async () => {
-        render(
-            <BrowserRouter>
-                <InterfaceDemo />
-            </BrowserRouter>
-        )
+        // eslint-disable-next-line testing-library/no-unnecessary-act
+        await act( () => {
+            render(
+                <BrowserRouter>
+                    <InterfaceDemo />
+                </BrowserRouter>
+            )
+        })
         // 通过id测试内容显示
         const interfaceDemo = await screen.findByTestId('interfaceDemo')
         expect(interfaceDemo).toBeInTheDocument()
         // 获取文字内容测试内容显示
         const showTitle = await screen.findByText('请求接口返回数据')
         expect(showTitle).toBeInTheDocument()
-        const showGetList = await screen.findByText('getList')
-        expect(showGetList).toBeInTheDocument()
         // 测试表格内容的显示
         const showTable = await screen.findByTestId('showTable')
         expect(showTable).toBeInTheDocument()
@@ -47,24 +48,23 @@ describe('InterfaceDemo', () => {
     })
 
     test('测试导出功能', async() => {
-        render(
-            <BrowserRouter>
-                <InterfaceDemo />
-            </BrowserRouter>
-        )
-
-
+        // eslint-disable-next-line testing-library/no-unnecessary-act
+        await act( () => {
+            render(
+                <BrowserRouter>
+                    <InterfaceDemo />
+                </BrowserRouter>
+            )
+        })
         // 通过id测试内容显示
         const interfaceDemo = await screen.findByTestId('interfaceDemo')
         expect(interfaceDemo).toBeInTheDocument()
         // 获取导出按钮
         const exportBtn = await within(interfaceDemo).findByTestId('exportBtn')
-        // console.log('exportBtn', exportBtn)
         expect(exportBtn).toBeInTheDocument()
-        await act( () => {
-            userEvent.click(exportBtn)
-            // screen.debug()
-        })
+        userEvent.click(exportBtn)
+        // screen.debug()
+        
     });
 
 })

@@ -54,9 +54,6 @@ import './index.css'
            <div className='interfaceTitle'>
                {list.title || ''}
            </div>
-           <div className='interfacenName'>
-                {list.name}
-           </div>
            <div>
                <Button data-testid="exportBtn" type='primary' onClick={getExcel}>导出</Button>
            </div>
