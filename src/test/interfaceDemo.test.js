@@ -1,8 +1,6 @@
 import InterfaceDemo from '../page/interfaceDemo'
 import { render, screen, within, act } from '@testing-library/react'
-// import { act } from "react-dom/test-utils";
 import userEvent from '@testing-library/user-event'
-import { BrowserRouter } from "react-router-dom";
 import Axios from 'axios'
 var MockAdapter = require("axios-mock-adapter");
 
@@ -26,11 +24,9 @@ describe('InterfaceDemo', () => {
     });
     test('测试InterfaceDemo', async () => {
         // eslint-disable-next-line testing-library/no-unnecessary-act
-        await act( () => {
+        await act(() => {
             render(
-                <BrowserRouter>
-                    <InterfaceDemo />
-                </BrowserRouter>
+                <InterfaceDemo />
             )
         })
         // 通过id测试内容显示
@@ -47,13 +43,11 @@ describe('InterfaceDemo', () => {
         // screen.debug()
     })
 
-    test('测试导出功能', async() => {
+    test('测试导出功能', async () => {
         // eslint-disable-next-line testing-library/no-unnecessary-act
-        await act( () => {
+        await act(() => {
             render(
-                <BrowserRouter>
-                    <InterfaceDemo />
-                </BrowserRouter>
+                <InterfaceDemo />
             )
         })
         // 通过id测试内容显示
@@ -64,7 +58,7 @@ describe('InterfaceDemo', () => {
         expect(exportBtn).toBeInTheDocument()
         userEvent.click(exportBtn)
         // screen.debug()
-        
+
     });
 
 })

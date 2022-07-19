@@ -2,12 +2,12 @@ import React, { Suspense } from 'react'
 import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom'
 import { Spin } from 'antd'
 
-const Home = React.lazy(() => import('./page/home'))
-const Location = React.lazy(() => import('./page/location'))
-const I18next = React.lazy(() => import('./page/i18next'))
-const SessionStorage = React.lazy(() => import('./page/sessionStorage'))
-const UseSelectorDemo = React.lazy(() => import('./page/useSelectorDemo'))
-const InterfaceDemo = React.lazy(() => import('./page/interfaceDemo'))
+const Home = React.lazy(() => import('@SRC/page/home'))
+const Location = React.lazy(() => import('@SRC/page/location'))
+const I18next = React.lazy(() => import('@SRC/page/i18next'))
+const SessionStorage = React.lazy(() => import('@SRC/page/sessionStorage'))
+const UseSelectorDemo = React.lazy(() => import('@SRC/page/useSelectorDemo'))
+const InterfaceDemo = React.lazy(() => import('@SRC/page/interfaceDemo'))
 
 
 export default function Router() {

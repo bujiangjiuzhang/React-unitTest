@@ -115,9 +115,6 @@
       "src/**/*.{js,jsx,ts,tsx}",
       "!src/**/*.d.ts"
     ],
-    "setupFiles": [
-      "react-app-polyfill/jsdom"
-    ],
     "setupFilesAfterEnv": [
       "<rootDir>/src/setupTests.js"
     ],
@@ -137,8 +134,9 @@
     ],
     "modulePaths": [],
     "moduleNameMapper": {
-      "^react-native$": "react-native-web",
-      "\\.(css|less)$": "identity-obj-proxy"
+      "\\.(css|less)$": "identity-obj-proxy",
+      "^@/SRC(.*)$": "<rootDir>/src/$1",
+      "@/SRC/page/(.*)$": "<rootDir>/src/page/$1"
     },
     "moduleFileExtensions": [
       "web.js",

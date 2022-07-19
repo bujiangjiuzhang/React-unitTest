@@ -24,6 +24,7 @@ import './index.css'
         }
     }
     const getExcel = async()=> {
+        console.log('触发点击事件导出表格')
         window.location.href = 'http://localhost:5000/getExcel'
     }
       
