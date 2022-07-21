@@ -12,7 +12,7 @@ let localStorageMock = (function() {
       removeItem: function(key) {
         delete storage[key];
       },
-      get length() {
+      getLength() {
         return Object.keys(storage).length;
       },
       key: function(i) {

@@ -12,7 +12,10 @@ const mock = new MockAdapter(Axios, { onNoMatch: "throwException" });
 
 describe('InterfaceDemo', () => {
     beforeAll(() => {
-        mock.onAny('http://localhost:5000/getList').reply(200, { "title": "请求接口返回数据", "name": "getList", "data": [{ "id": 1, "name": "zhangsan", "age": 10, "address": "湖北省武汉市XXX" }, { "id": 2, "name": "lisi", "age": 12, "address": "湖北省荆门市XXX" }, { "id": 3, "name": "wanger", "age": 32, "address": "湖北省黄冈市XXX" }, { "id": 4, "name": "liuji", "age": 22, "address": "湖北省武汉市XXX" }, { "id": 5, "name": "hebin", "age": 43, "address": "湖北省天门市XXX" }, { "id": 6, "name": "wuhang", "age": 23, "address": "湖北省武汉市XXX" }, { "id": 7, "name": "duhu", "age": 66, "address": "湖北省鄂州市XXX" }] })
+        mock.onAny('http://localhost:5000/getList').reply(200, { 
+            "title": "请求接口返回数据", 
+            "name": "getList", 
+            "data": [{ "id": 1, "name": "zhangsan", "age": 10, "address": "湖北省武汉市XXX" }]})
     });
 
     afterAll(() => {
@@ -40,10 +43,13 @@ describe('InterfaceDemo', () => {
         expect(showTable).toBeInTheDocument()
         const zhangsan = await within(showTable).findByText('zhangsan')
         expect(zhangsan).toBeInTheDocument()
+        const address = await within(showTable).findByText('湖北省武汉市XXX')
+        expect(address).toBeInTheDocument()
         // 获取导出按钮
         const exportBtn = await within(interfaceDemo).findByTestId('exportBtn')
         expect(exportBtn).toBeInTheDocument()
         userEvent.click(exportBtn)
+        // eslint-disable-next-line testing-library/no-debugging-utils
         // screen.debug()
     })
 

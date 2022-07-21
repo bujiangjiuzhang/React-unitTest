@@ -13,7 +13,7 @@ import './index.css'
         getList()
     },[])
     
-    const getList = async()=> {
+    const getList = async() => {
         try {
             const response = await axios.get('http://localhost:5000/getList')
             if(response.status === 200) {
