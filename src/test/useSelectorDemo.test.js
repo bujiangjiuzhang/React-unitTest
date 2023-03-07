@@ -8,21 +8,33 @@ import { StoreWrapper } from '../storeWrapper'
 // 1.测试useSelector获取reducer中store对象的数据
 // 2.测试内容的显示
 
+
+// 模拟路由useNavigate
+// mock路由
+// jest.mock('react-router-dom', () => {
+//   const originalModule = jest.requireActual('react-router-dom')
+//   return {
+//     __esModule: true,
+//     ...originalModule,
+//     useNavigate: jest.fn()
+//   }
+// })
+
 describe('UseSelectorDemo', () => {
 
-  test('测试UseSelectorDemo', async()=> {
+  test('测试UseSelectorDemo', async () => {
     // 模拟useSelector获取reducer中store对象的数据
     const spy = jest.spyOn(Redux, 'useSelector')
-    
+
     spy.mockReturnValue({
-        title: '测试修改title'
+      title: '测试修改title'
     })
     render(
-        <StoreWrapper>
-            <BrowserRouter>
-                <UseSelectorDemo />
-            </BrowserRouter>
-        </StoreWrapper>
+      <StoreWrapper>
+        <BrowserRouter>
+          <UseSelectorDemo />
+        </BrowserRouter>
+      </StoreWrapper>
     )
     // 测试内容的显示
     const testTitle = await screen.findByText('测试修改title')
