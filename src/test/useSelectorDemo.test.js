@@ -20,6 +20,16 @@ import { StoreWrapper } from '../storeWrapper'
 //   }
 // })
 
+// 或者
+// const mockDispatch = jest.fn();
+// const mockSelector = jest.fn();
+
+// jest.mock("react-redux", () => ({
+//  ...jest.requireActual("react-redux"),
+//  useDispatch: () => mockDispatch,
+//  useSelector: () => mockSelector,
+// }));
+
 describe('UseSelectorDemo', () => {
 
   test('测试UseSelectorDemo', async () => {
